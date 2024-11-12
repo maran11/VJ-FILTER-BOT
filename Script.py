@@ -236,7 +236,6 @@ Nᴀᴍᴇ - {}"""
 <b> Size ⚙️: {file_size}</b>""" 
 
     IMDB_TEMPLATE_TXT = """
-<a href="{url}">"{poster_url}" /></a>
 <b>🏷 Title</b>: <a href={url}>{title}</a> [{year}]
 🎭 Genres: #{genres}
 🌟 Rating: {rating} / 10 ({votes})
