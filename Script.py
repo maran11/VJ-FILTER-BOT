@@ -241,6 +241,13 @@ Nᴀᴍᴇ - {}"""
 ━━━━━━━━━━━━━━━━━━━━
 """
 
+# Function to handle caption formatting
+def format_caption(file_name, file_size, language=None):
+    # Set a default value if 'language' is not provided
+    language = language or "Unknown"
+    return CAPTION.format(file_name=file_name, file_size=file_size, language=language)
+
+
     IMDB_TEMPLATE_TXT = """
 <b>🏷 Title</b>: <a href={url}>{title}</a> [{year}]
 🎭 Genres: #{genres}
