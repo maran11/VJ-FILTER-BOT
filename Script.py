@@ -231,22 +231,14 @@ Nᴀᴍᴇ - {}"""
 
 𝗠𝗲𝘀𝘀𝗮𝗴𝗲 <b>: {}</b>"""
 
-    CAPTION = """<b>📂 Fɪʟᴇɴᴀᴍᴇ :@RM_Movie_Flix {file_name}</b>
+  CAPTION = """<b>📂 Fɪʟᴇɴᴀᴍᴇ :@RM_Movie_Flix {file_name}</b>
 
 <b>⚙️ Size : {file_size}</b>
-<b>🗣️ Language : {language}</b>
 ━━━━━━━━━━━━━━━━━━━━
 💫 Enjoy the latest movies! Join us for updates:
 <b>🔗 <a href="https://t.me/Latest_Movies_Update1">🔥 𝐌𝐨𝐯𝐢𝐞𝐬 𝐔𝐩𝐝𝐚𝐭𝐞 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 🔥</a></b>
 ━━━━━━━━━━━━━━━━━━━━
 """
-
-# Function to handle caption formatting
-def format_caption(file_name, file_size, language=None):
-    # Set a default value if 'language' is not provided
-    language = language or "Unknown"
-    return CAPTION.format(file_name=file_name, file_size=file_size, language=language)
-
 
     IMDB_TEMPLATE_TXT = """
 <b>🏷 Title</b>: <a href={url}>{title}</a> [{year}]
