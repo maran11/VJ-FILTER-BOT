@@ -231,13 +231,13 @@ Nᴀᴍᴇ - {}"""
 
 𝗠𝗲𝘀𝘀𝗮𝗴𝗲 <b>: {}</b>"""
 
-    CAPTION = """<b>𝐌𝐨𝐯𝐢𝐞 𝐓𝐢𝐭𝐥𝐞 :</b> <code>@RM_Movie_Flix {file_name}</code>
+    CAPTION = """<b>𝐌𝐨𝐯𝐢𝐞 𝐓𝐢𝐭𝐥𝐞 :@RM_Movie_Flix {file_name}
 
-<b>🗳️ 𝐅𝐢𝐥𝐞 𝐒𝐢𝐳𝐞 :</b> <code>{file_size}</code> | <b>🗣️ 𝐋𝐚𝐧𝐠𝐮𝐚𝐠𝐞 :</b> <code>{language}</code>
+<b>🗳️ 𝐅𝐢𝐥𝐞 𝐒𝐢𝐳𝐞 :{file_size} | <b>🗣️ 𝐋𝐚𝐧𝐠𝐮𝐚𝐠𝐞 :{language}
 
 ━━━━━━━━━━━━━━━━━━━━
-💫 <i>Enjoy unlimited movies and updates! Join us today:</i>  
-<b>🔗 <a href="https://t.me/Latest_Movies_Update1">🔥 𝐌𝐨𝐯𝐢𝐞𝐬 𝐔𝐩𝐝𝐚𝐭𝐞 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 🔥</a></b>
+💫   
+<b><a href="https://t.me/Latest_Movies_Update1">🔥 𝐌𝐨𝐯𝐢𝐞𝐬 𝐔𝐩𝐝𝐚𝐭𝐞 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 🔥</a></b>
 ━━━━━━━━━━━━━━━━━━━━
 """ 
 
