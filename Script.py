@@ -241,13 +241,6 @@ Nᴀᴍᴇ - {}"""
 ━━━━━━━━━━━━━━━━━━━━
 """
 
-# Example usage of the CAPTION template
-f_caption = CAPTION.format(
-    file_name='Example Movie',
-    file_size='1.5GB',
-    language='English'
-)
-
     IMDB_TEMPLATE_TXT = """
 <b>🏷 Title</b>: <a href={url}>{title}</a> [{year}]
 🎭 Genres: #{genres}
