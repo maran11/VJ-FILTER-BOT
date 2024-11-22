@@ -233,7 +233,7 @@ Nᴀᴍᴇ - {}"""
 
     CAPTION = """<b>📂Fɪʟᴇɴᴀᴍᴇ : @RM_Movie_Flix {file_name}
 ━━━━━━━━━━━━━━━━━━━━━━
-<b>💫 <a href="https://t.me/Latest_Movies_Update1">🔥 𝐌𝐨𝐯𝐢𝐞𝐬 𝐔𝐩𝐝𝐚𝐭𝐞 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 🔥</a></b>
+<b>💫 <a href="https://t.me/Movies_Adda_725">🔥 𝐌𝐨𝐯𝐢𝐞𝐬 𝐔𝐩𝐝𝐚𝐭𝐞 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 🔥</a></b>
 ━━━━━━━━━━━━━━━━━━━━━━
 """
 
