@@ -3,15 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RM Movie Flix - Advanced Video Player</title>
+    <title>RM Movie Flix 🎥</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.9/plyr.css">
     <style>
-        /* Running Text Animation */
+        /* Running Text for File Name */
         .running-text {
             white-space: nowrap;
             overflow: hidden;
             display: block;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ffcc00;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
         }
 
         .running-text span {
@@ -51,40 +55,41 @@
             }
         }
 
-        /* Button Hover Effects */
-        .btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.4);
-            transition: all 0.3s ease-in-out;
+        /* Movies Button */
+        .movies-btn {
+            animation: bounce 3s infinite;
+            background-color: #ffcc00;
+            color: black;
+            font-size: 1.2rem;
+            border: none;
         }
 
-        /* Video Container */
-        .video-container {
-            max-width: 900px;
-            margin: auto;
-            border: 3px solid #ffcc00;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
         }
 
-        /* Fullscreen Rotation Fix */
-        video:-webkit-full-screen {
-            transform: rotate(0);
+        /* Thumbnail Styling */
+        .video-container img.thumbnail {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: auto;
+            z-index: 10;
+            display: none;
         }
 
-        video:-moz-full-screen {
-            transform: rotate(0);
-        }
-
-        video:fullscreen {
-            transform: rotate(0);
-        }
-
-        /* Alert Box Styling */
-        .alert {
-            border-radius: 10px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        .video-container:hover img.thumbnail {
+            display: block;
         }
 
         /* Footer Styling */
@@ -104,26 +109,42 @@
     <!-- Header Section -->
     <header class="text-center py-4 bg-dark">
         <h1 class="fw-bold">
-            <span class="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-yellow-500">
-                RM Movie Flix
-            </span>
+            <a href="https://t.me/rm_movie_flix" class="text-warning text-decoration-none">
+                RM Movie Flix 🎥
+            </a>
         </h1>
     </header>
 
     <!-- Running Text -->
     <div class="text-center py-3">
         <p class="running-text">
-            <span>@RM_Movie_Flix {{file_name}}</span>
+            <span>🎬 @RM_Movie_Flix | Now Playing: {{file_name}} 🎬</span>
         </p>
     </div>
 
     <!-- Video Player Section -->
-    <div class="video-container my-4">
+    <div class="video-container my-4 position-relative">
         <video id="player" class="w-100" playsinline controls>
             <source src="{{file_url}}" type="video/mp4">
             <track kind="subtitles" src="subtitles.vtt" srclang="en" label="English">
             Your browser does not support HTML video.
         </video>
+        <img class="thumbnail" src="https://via.placeholder.com/900x500.png?text=Thumbnail+Image" alt="Video Thumbnail">
+    </div>
+
+    <!-- Additional Player Controls -->
+    <div class="text-center">
+        <button id="play-pause" class="btn btn-warning mx-2">Play/Pause</button>
+        <button id="mute-unmute" class="btn btn-info mx-2">Mute/Unmute</button>
+        <button id="speed-control" class="btn btn-danger mx-2">Speed: 1x</button>
+        <button id="fullscreen" class="btn btn-primary mx-2">Fullscreen</button>
+    </div>
+
+    <!-- Movies Section -->
+    <div class="text-center my-4">
+        <a href="https://t.me/rm_movie_request" class="movies-btn btn-lg shadow text-decoration-none">
+            🍿 Explore Movies 🍿
+        </a>
     </div>
 
     <!-- Download Button -->
@@ -131,34 +152,6 @@
         <a href="{{file_url}}" download class="btn download-btn btn-lg rounded-pill shadow">
             Download Now
         </a>
-    </div>
-
-    <!-- External Player Buttons -->
-    <div class="container my-4">
-        <div class="row text-center">
-            <div class="col-md-3 mb-2">
-                <button onclick="vlc_player()" class="btn btn-outline-warning w-100 shadow">VLC Player</button>
-            </div>
-            <div class="col-md-3 mb-2">
-                <button onclick="mx_player()" class="btn btn-outline-info w-100 shadow">MX Player</button>
-            </div>
-            <div class="col-md-3 mb-2">
-                <button onclick="playit_player()" class="btn btn-outline-danger w-100 shadow">Play-It</button>
-            </div>
-            <div class="col-md-3 mb-2">
-                <button onclick="s_player()" class="btn btn-outline-success w-100 shadow">S Player</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Additional Information -->
-    <div class="container">
-        <div class="alert alert-danger text-center">
-            <strong>Video not playing?</strong> Download and watch on your favorite player.
-        </div>
-        <div class="alert alert-success text-center">
-            <strong>Broken links?</strong> Contact <a href="https://telegram.me/rahat146tm" class="text-warning">Tech VJ</a>.
-        </div>
     </div>
 
     <!-- Footer -->
@@ -170,30 +163,41 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.plyr.io/3.6.9/plyr.polyfilled.js"></script>
     <script>
-        // Initialize Plyr.js
         const player = new Plyr('#player');
 
-        // Fullscreen Rotation Fix
-        document.getElementById('player').addEventListener('webkitfullscreenchange', () => {
-            document.getElementById('player').style.transform = 'rotate(0)';
+        // Play/Pause Control
+        const playPauseBtn = document.getElementById('play-pause');
+        playPauseBtn.addEventListener('click', () => {
+            if (player.playing) {
+                player.pause();
+                playPauseBtn.textContent = 'Play';
+            } else {
+                player.play();
+                playPauseBtn.textContent = 'Pause';
+            }
         });
 
-        // External Player Functions
-        function vlc_player() {
-            window.open('vlc://{{file_url}}', '_blank');
-        }
+        // Mute/Unmute Control
+        const muteUnmuteBtn = document.getElementById('mute-unmute');
+        muteUnmuteBtn.addEventListener('click', () => {
+            player.muted = !player.muted;
+            muteUnmuteBtn.textContent = player.muted ? 'Unmute' : 'Mute';
+        });
 
-        function mx_player() {
-            window.open('intent://{{file_url}}#Intent;scheme=mxplayer;end', '_blank');
-        }
+        // Speed Control
+        const speedControlBtn = document.getElementById('speed-control');
+        let speed = 1;
+        speedControlBtn.addEventListener('click', () => {
+            speed = speed === 1 ? 1.5 : 1;
+            player.speed = speed;
+            speedControlBtn.textContent = `Speed: ${speed}x`;
+        });
 
-        function playit_player() {
-            alert('Play-It player functionality is coming soon!');
-        }
-
-        function s_player() {
-            alert('S Player functionality is coming soon!');
-        }
+        // Fullscreen Toggle
+        const fullscreenBtn = document.getElementById('fullscreen');
+        fullscreenBtn.addEventListener('click', () => {
+            player.fullscreen.enter();
+        });
     </script>
 </body>
 </html>
